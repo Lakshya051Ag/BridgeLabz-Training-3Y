@@ -1,64 +1,58 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
+/* ===== General styling ===== */
 body {
-  font-family: Georgia, 'Times New Roman', serif;
-  background-color: #fffdf8;
-  color: #222;
-  padding: 40px 15%;
-  line-height: 1.7;
+  font-family: Arial, sans-serif;
+  background-color: #ecf0f1;
+  text-align: center;
+  margin: 0;
+  color: #2c3e50;
 }
 
-/* ===== Header / Title ===== */
-.article-header h1 {
-  font-size: 2.3rem;
-  color: #1a1a1a;
-  margin-bottom: 10px;
+header, footer {
+  padding: 20px;
+  background-color: #2c3e50;
+  color: white;
 }
 
-/* ===== Subheading: author + date ===== */
-.subheading {
-  font-size: 0.95rem;
-  color: #666;
-  margin-bottom: 35px;
-  font-style: italic;
+header h1 {
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);  /* text-shadow on heading */
 }
 
-/* ===== Paragraph spacing ===== */
-.article-body p {
-  margin-bottom: 25px;   /* consistent spacing between paragraphs */
-  font-size: 1.1rem;
+/* ===== Flexbox arranges cards in a single row ===== */
+.card-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  padding: 40px 20px;
 }
 
-/* ===== Style first letter of each paragraph (drop cap) ===== */
-.article-body p::first-letter {
-  font-size: 2.2rem;
-  font-weight: bold;
-  color: #b45309;
-  margin-right: 4px;
+.card {
+  background-color: white;
+  width: 250px;
+  padding: 20px;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* smooth animation */
 }
 
-/* ===== Make first line of each paragraph bold ===== */
-.article-body p::first-line {
-  font-weight: bold;
+.card h2 {
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
 }
 
-/* ===== Highlighted keywords ===== */
-mark {
-  background-color: #fde68a;   /* custom highlight color */
-  color: #1a1a1a;
-  padding: 0 3px;
+/* Different box-shadow styles for each card */
+.card1 {
+  box-shadow: 2px 2px 6px rgba(0,0,0,0.2);
 }
 
-/* ===== Blockquote styling ===== */
-blockquote {
-  border-left: 5px solid #b45309;   /* left border to emphasize quote */
-  background-color: #fef3e2;        /* background color for the block */
-  padding: 15px 20px;
-  margin: 25px 0;
-  font-style: italic;
-  color: #4b3b2a;
+.card2 {
+  box-shadow: 6px 6px 15px rgba(0,0,0,0.4);
+}
+
+.card3 {
+  box-shadow: 0 0 15px rgba(52,152,219,0.7);
+}
+
+/* On hover, cards lift up with a bigger shadow */
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 25px rgba(0,0,0,0.3);
 }

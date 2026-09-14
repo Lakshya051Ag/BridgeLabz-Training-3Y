@@ -2,67 +2,34 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Favorite Destination - Kyoto</title>
+  <title>Q2 - Height and Width Practice Layout</title>
   <link rel="stylesheet" href="q2.css">
 </head>
 <body>
-
   <header>
-    <h1>Discovering Kyoto</h1>
+    <h1>Height and Width Practice Layout</h1>
   </header>
 
-  <nav>
-    <a href="#intro">Introduction</a>
-    <a href="#temples">Temples</a>
-    <a href="#food">Food</a>
-    <a href="#seasons">Seasons</a>
-  </nav>
+  <main class="box-container">
+    <div class="box box-px">
+      <h2>Box 1</h2>
+      <p>Width: 200px<br>Height: 200px</p>
+    </div>
 
-  <main>
+    <div class="box box-percent">
+      <h2>Box 2</h2>
+      <p>Width: 40%<br>Height: 40vh<br>max-width: 300px</p>
+    </div>
 
-    <!-- Section 1: Linear gradient background -->
-    <section id="intro" class="section gradient-linear">
-      <h2>Welcome to Kyoto</h2>
-      <p>
-        Kyoto is Japan's former capital, famous for its wooden temples,
-        classical gardens, and traditional wooden houses. It is a city
-        where centuries-old culture blends peacefully with modern life.
-      </p>
-    </section>
-
-    <!-- Section 2: Fixed background image (parallax-like) -->
-    <section id="temples" class="section fixed-bg-1">
-      <h2>Ancient Temples</h2>
-      <p>
-        Fushimi Inari Shrine, with its thousands of vermillion torii gates,
-        is one of the most photographed spots in all of Japan.
-      </p>
-    </section>
-
-    <!-- Section 3: Radial gradient background -->
-    <section id="food" class="section gradient-radial">
-      <h3>Local Cuisine</h3>
-      <p>
-        From delicate kaiseki dinners to street-side matcha sweets,
-        Kyoto's food scene reflects centuries of refined tradition.
-      </p>
-    </section>
-
-    <!-- Section 4: Fixed background image (parallax-like) -->
-    <section id="seasons" class="section fixed-bg-2">
-      <h3>Cherry Blossoms & Autumn Leaves</h3>
-      <p>
-        Kyoto transforms twice a year — pink cherry blossoms in spring
-        and fiery red maple leaves in autumn draw visitors worldwide.
-      </p>
-    </section>
-
+    <div class="box box-em">
+      <h2>Box 3</h2>
+      <p>Width: 15em<br>min-height: 10em<br>overflow: auto</p>
+      <p>This box has extra text inside it to demonstrate the overflow property when the content is taller than the box itself. Scroll to see more.</p>
+    </div>
   </main>
 
   <footer>
-    <p>&copy; 2026 Travel Diaries. All rights reserved.</p>
+    <p>Assignment 7 - Question 2</p>
   </footer>
-
 </body>
 </html>

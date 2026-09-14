@@ -1,112 +1,104 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
+/* ===== General styling ===== */
 body {
   font-family: Arial, sans-serif;
-  background-color: #f7f8fa;
-  padding: 50px 20px;
+  background-color: #fdfdfd;
+  color: #2c3e50;
+  margin: 0;
 }
 
-.page-title {
+header, footer {
+  background-color: #34495e;
+  color: white;
   text-align: center;
+  padding: 20px;
+}
+
+main {
+  padding: 30px;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+section {
   margin-bottom: 40px;
-  color: #1f2937;
 }
 
-/* ===== Pricing container: flexbox with equal columns ===== */
-.pricing-container {
-  display: flex;
-  justify-content: center;
-  align-items: stretch;   /* makes all plans equal height */
-  gap: 25px;
-  flex-wrap: wrap;
-}
-
-/* ===== Each plan box ===== */
-.plan {
-  background-color: #ffffff;
-  width: 260px;
-  padding: 30px 25px;
-  border: 2px solid #e5e7eb;
-  border-radius: 14px;
-  text-align: center;
-  display: flex;
-  flex-direction: column;      /* keeps content stacked, button at bottom */
-  transition: transform 0.3s ease, background-color 0.3s ease; /* smooth hover */
-}
-
-/* Hover effect: enlarge slightly + change background */
-.plan:hover {
-  transform: scale(1.05);
-  background-color: #f0f4ff;
-}
-
-.plan h2 {
-  font-size: 1.4rem;
-  margin-bottom: 20px;
-  color: #111827;
-}
-
-.features {
+/* ===== Pseudo-classes ===== */
+.item-list {
   list-style: none;
-  margin-bottom: 25px;
-  flex-grow: 1;   /* pushes price/button down so all boxes match height */
+  padding: 0;
 }
 
-.features li {
-  padding: 8px 0;
-  border-bottom: 1px solid #f0f0f0;
-  color: #4b5563;
-  font-size: 0.95rem;
-}
-
-.price {
-  font-size: 2rem;
-  font-weight: bold;
-  color: #1f2937;
-  margin-bottom: 20px;
-}
-
-.price span {
-  font-size: 0.9rem;
-  font-weight: normal;
-  color: #6b7280;
-}
-
-.btn {
-  display: inline-block;
-  background-color: #4f46e5;
-  color: #ffffff;
-  padding: 12px 0;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: bold;
+.item-list li {
+  padding: 10px;
+  margin-bottom: 5px;
+  background-color: #ecf0f1;
+  border-radius: 5px;
+  cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
-.btn:hover {
-  background-color: #3730a3;
+/* :hover pseudo-class */
+.item-list li:hover {
+  background-color: #3498db;
+  color: white;
 }
 
-/* ===== Highlight the most popular plan ===== */
-.plan.popular {
-  border: 3px solid #f59e0b;   /* different border color/width */
-  position: relative;
-  transform: scale(1.03);
+/* :nth-child() pseudo-class - styles every even item */
+.item-list li:nth-child(even) {
+  border-left: 5px solid #e67e22;
 }
 
-.badge {
-  position: absolute;
-  top: -14px;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: #f59e0b;
-  color: #ffffff;
-  padding: 4px 14px;
-  border-radius: 20px;
-  font-size: 0.8rem;
+/* ::before and ::after pseudo-elements */
+.item-list li::before {
+  content: "\1F449  ";   /* adds a pointing hand icon before each item */
+}
+
+.item-list li::after {
+  content: " \2714";     /* adds a checkmark after each item */
+  color: green;
+}
+
+/* ===== Attribute selectors ===== */
+/* Targets only input elements with type="text" */
+input[type="text"] {
+  padding: 8px;
+  border: 2px solid #3498db;
+  border-radius: 5px;
+}
+
+/* :focus pseudo-class - changes style when the input is focused */
+input[type="text"]:focus {
+  outline: none;
+  border-color: #e74c3c;
+}
+
+/* Targets links whose href starts with "https" */
+a[href^="https"] {
+  color: green;
   font-weight: bold;
+}
+
+/* ===== Combinators ===== */
+/* Descendant selector: any <p> inside .parent, at any depth */
+.parent p {
+  color: #16a085;
+}
+
+/* Child selector: only direct <p> children of .parent */
+.parent > p {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+/* Adjacent sibling selector: the <p> immediately after an <h3> */
+h3 + p {
+  color: #8e44ad;
+  font-style: italic;
+}
+
+/* General sibling selector: all <p> siblings after an <h3>, at the same level */
+h3 ~ p {
+  border-left: 3px solid #8e44ad;
+  padding-left: 10px;
 }
